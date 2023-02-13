@@ -11,7 +11,6 @@
 <body>
     <?php
     $serveur = "localhost";
-    $nameDb = "test2";
     $login = "root";
     $pass = "root";
     try {
@@ -26,7 +25,7 @@
          */
         $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        //echo "Connexion a la base de données réussite ";
+        echo "Connexion a la base de données réussite ";
 
         /**
          * Pour cree une base de données via php dans un premier temp enlever dbname=$nameDb
@@ -51,9 +50,10 @@
         //     email VARCHAR(70)
         //   )';
 
-        $connexion->exec($codeSqlCreationTable);
+        //$connexion->exec($codeSqlCreationTable);
 
-        echo "table Visiteur créée";
+        // echo "table Visiteur créée";
+       
     } catch (PDOException $e) {
 
         echo "Echec de la connexion: " . $e->getMessage();
