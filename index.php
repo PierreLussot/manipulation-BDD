@@ -195,14 +195,14 @@
          * Si on veut un ordre selon l'âge decroissant il faudra rajouter  DESC a la fin
          */
 
-        $requete = $connexion->prepare("
-        SELECT * FROM Visiteurs  ORDER BY age DESC");
+        //$requete = $connexion->prepare("
+        // SELECT * FROM Visiteurs  ORDER BY age DESC");
 
         /**
          *J'exécute la requête. 
          */
 
-        $requete->execute();
+        // $requete->execute();
 
         /**
          *Puis on demande d'afficher les résultats.
@@ -211,7 +211,7 @@
          *
          */
 
-        $resultat =  $requete->fetchAll();
+        // $resultat =  $requete->fetchAll();
 
         /**
          *Puis on demande d'afficher les résultats.
@@ -219,9 +219,20 @@
          *
          */
 
-        echo "<pre>";
-        print_r($resultat);
-        echo "</pre>";
+        //  echo "<pre>";
+        //print_r($resultat);
+        //echo "</pre>"; 
+
+        /***********************************5 MODIFICATION DE DONNEES  *************************************************** */
+
+        $modification = "UPDATE Visiteurs SET age=25 WHERE id=1";
+
+        $requete = $connexion->prepare($modification);
+
+        $requete->execute();
+
+        echo "information MAJ";
+
     } catch (PDOException $e) {
 
         echo "Echec de la connexion: " . $e->getMessage();
