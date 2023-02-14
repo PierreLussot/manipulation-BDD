@@ -208,6 +208,7 @@
          *Puis on demande d'afficher les résultats.
          *Pour cela, on utilise fetchAll() qui signifie tout renvoyé 
          *comme fetchAll() renvoi un type tableau on l'affiche avec  print_r();
+         *
          */
 
         $resultat =  $requete->fetchAll();
